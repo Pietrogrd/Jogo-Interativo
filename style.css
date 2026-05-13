@@ -1,0 +1,238 @@
+
+html,
+body {
+	height: 100%;
+}
+
+/* Frame 1 */
+body {
+	margin: 0;
+	background: #FFFFFF;
+}
+
+/* Frame 1 */
+.frame-1 {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Rectangle 3 */
+.rectangle-3 {
+	position: absolute;
+	inset: 0;
+	background: #D9D9D9;
+}
+
+/* Background image (node 62:15) */
+.background-image {
+	position: absolute;
+	inset: 0;
+	background-image: url("assets/figma-background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Group (CULTURA DE BRUSQUE) */
+.group {
+	position: absolute;
+	top: 73px;
+	left: 50%;
+	width: 817.26px;
+	height: 180.02px;
+	transform: translateX(-50%);
+}
+
+.group .g-letter {
+	position: absolute;
+	display: block;
+	font-family: "Dela Gothic One", system-ui, sans-serif;
+	font-size: 48px;
+	font-weight: 400;
+	color: #1F4037;
+	line-height: 1;
+	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px -2px 0px rgba(253, 247, 129, 1);
+	transform-origin: 50% 50%;
+	white-space: pre;
+	user-select: none;
+}
+
+/* Posições e dimensões das letras (conforme Figma) */
+.group .g-letter:nth-child(1) { left: 37.74px; top: 138.15px; width: 75.48px; height: 90.69px; transform: translate(-50%, -50%) rotate(-29.00deg); }
+.group .g-letter:nth-child(2) { left: 82.8px; top: 113.22px; width: 71.8px; height: 87.79px; transform: translate(-50%, -50%) rotate(-27.00deg); }
+.group .g-letter:nth-child(3) { left: 126.24px; top: 92.98px; width: 63.33px; height: 87.69px; transform: translate(-50%, -50%) rotate(-23.00deg); }
+.group .g-letter:nth-child(4) { left: 171.4px; top: 75.48px; width: 66.49px; height: 81.25px; transform: translate(-50%, -50%) rotate(-15.50deg); }
+.group .g-letter:nth-child(5) { left: 220.59px; top: 60.27px; width: 61.72px; height: 79.32px; transform: translate(-50%, -50%) rotate(-11.20deg); }
+.group .g-letter:nth-child(6) { left: 269.25px; top: 48.91px; width: 55.73px; height: 77px; transform: translate(-50%, -50%) rotate(-8.00deg); }
+.group .g-letter:nth-child(7) { left: 319.08px; top: 40.89px; width: 54.35px; height: 75.18px; transform: translate(-50%, -50%) rotate(-7.80deg); }
+.group .g-letter:nth-child(8) { left: 352.55px; top: 37.49px; width: 15.42px; height: 70.57px; transform: translate(-50%, -50%) rotate(-7.30deg); }
+.group .g-letter:nth-child(9) { left: 384.63px; top: 35.7px; width: 45.31px; height: 71.39px; transform: translate(-50%, -50%) rotate(0.02deg); }
+.group .g-letter:nth-child(10) { left: 433.06px; top: 35.72px; width: 44.35px; height: 71.39px; transform: translate(-50%, -50%) rotate(2.71deg); }
+.group .g-letter:nth-child(11) { left: 464.62px; top: 37.49px; width: 15.42px; height: 70.57px; transform: translate(-50%, -50%) rotate(4.60deg); }
+.group .g-letter:nth-child(12) { left: 496.58px; top: 40.7px; width: 51.23px; height: 74.73px; transform: translate(-50%, -50%) rotate(8.08deg); }
+.group .g-letter:nth-child(13) { left: 544.92px; top: 48.33px; width: 55.48px; height: 76.88px; transform: translate(-50%, -50%) rotate(12.35deg); }
+.group .g-letter:nth-child(14) { left: 593.62px; top: 59.48px; width: 61.48px; height: 72.21px; transform: translate(-50%, -50%) rotate(16.67deg); }
+.group .g-letter:nth-child(15) { left: 642.4px; top: 74.32px; width: 65.29px; height: 71.82px; transform: translate(-50%, -50%) rotate(21.05deg); }
+.group .g-letter:nth-child(16) { left: 690.94px; top: 92.97px; width: 70.69px; height: 65.82px; transform: translate(-50%, -50%) rotate(23.10deg); }
+.group .g-letter:nth-child(17) { left: 738px; top: 115.08px; width: 72.04px; height: 62.83px; transform: translate(-50%, -50%) rotate(27.10deg); }
+.group .g-letter:nth-child(18) { left: 781.17px; top: 139.2px; width: 72.16px; height: 65.63px; transform: translate(-50%, -50%) rotate(29.20deg); }
+
+/* Rectangle 8 */
+.rectangle-8 {
+	position: absolute;
+	left: 709px;
+	top: 795px;
+	width: 1px;
+	height: 2px;
+	background: #D9D9D9;
+}
+
+/* Rectangle 7 (card do formulário) */
+.rectangle-7 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 395px;
+	height: 570px;
+	transform: translate(-50%, -50%);
+	border-radius: 40px;
+	border: 1px solid #000000;
+	background: rgba(52, 110, 49, 0.7);
+	box-sizing: border-box;
+}
+
+/* Rectangle 9/10/11 (campos) */
+.rectangle-9,
+.rectangle-10,
+.rectangle-11 {
+	position: absolute;
+	left: 44px;
+	width: 306px;
+	background: #004D23;
+	border-radius: 40px;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	padding: 0 18px;
+	font-family: "Do Hyeon", system-ui, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+/* Chrome/Edge autofill (evita fundo claro + texto preto ao escolher sugestão) */
+.rectangle-7 input {
+	caret-color: #FFFFFF;
+}
+
+.rectangle-7 input:-webkit-autofill,
+.rectangle-7 input:-webkit-autofill:hover,
+.rectangle-7 input:-webkit-autofill:focus,
+.rectangle-7 input:-webkit-autofill:active {
+	-webkit-text-fill-color: #FFFFFF;
+	-webkit-box-shadow: 0 0 0 1000px #004D23 inset;
+	box-shadow: 0 0 0 1000px #004D23 inset;
+	border-radius: 40px;
+	transition: background-color 9999s ease-in-out 0s;
+}
+
+.rectangle-7 input:autofill {
+	box-shadow: 0 0 0 1000px #004D23 inset;
+	caret-color: #FFFFFF;
+}
+
+/* NOME: (Rectangle 9 + label) */
+.rectangle-9,
+.field-nome {
+	top: 113px;
+	height: 56px;
+	line-height: 56px;
+	padding-left: 69px;
+}
+
+/* ESCOLA: (Rectangle 10 + label) */
+.rectangle-10,
+.field-escola {
+	top: 243px;
+	height: 53px;
+	line-height: 53px;
+	padding-left: 88px;
+}
+
+/* IDADE: (Rectangle 11 + label) */
+.rectangle-11,
+.field-idade {
+	top: 369px;
+	height: 53px;
+	line-height: 53px;
+	padding-left: 72px;
+}
+
+/* NOME:/ESCOLA:/IDADE: (labels) */
+.text-nome,
+.text-escola,
+.text-idade {
+	position: absolute;
+	left: 44px;
+	width: 306px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 18px;
+	font-family: "Do Hyeon", system-ui, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+	line-height: 1;
+	pointer-events: none;
+}
+
+/* NOME: */
+.text-nome,
+.label-nome {
+	top: 113px;
+	height: 56px;
+}
+
+/* ESCOLA: */
+.text-escola,
+.label-escola {
+	top: 243px;
+	height: 53px;
+}
+
+/* IDADE: */
+.text-idade,
+.label-idade {
+	top: 369px;
+	height: 53px;
+}
+
+/* Rectangle 6 (botão) */
+.rectangle-6 {
+	position: absolute;
+	left: 117px;
+	top: 491px;
+	width: 169px;
+	height: 30px;
+	border-radius: 40px;
+	background: #004D23;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* ENTRAR (texto do botão) */
+.text-entrar {
+	position: absolute;
+	left: 49px;
+	top: 5px;
+	font-family: "Do Hyeon", system-ui, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFFFFF;
+	line-height: 1;
+}
+
