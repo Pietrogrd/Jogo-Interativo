@@ -4,18 +4,39 @@ body {
 	height: 100%;
 }
 
-/* Frame 1 */
 body {
 	margin: 0;
 	background: #FFFFFF;
+	overflow: hidden;
 }
 
-/* Frame 1 */
-.frame-1 {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+/* Responsividade: escala proporcional mantendo o layout 1920x1080
+   - Usa "contain" para NÃO cortar conteúdo
+   - Mantém uma borda branca pequena via padding do body; o restante usa o fundo do cenário
+*/
+:root {
+	--pad: 10px;
+	--available-w: calc(100vw - (var(--pad) * 2));
+	--available-h: calc(100vh - (var(--pad) * 2));
+	--scale: min(calc(var(--available-w) / 1920px), calc(var(--available-h) / 1080px));
+}
+
+/* Frame 2 */
+.frame-2 {
+	position: fixed;
+	inset: var(--pad);
 	overflow: hidden;
+}
+
+/* Conteúdo do Frame 2 (coordenadas Figma 1920x1080, sem corte) */
+.frame-2-content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1920px;
+	height: 1080px;
+	transform: translate(-50%, -50%) scale(var(--scale));
+	transform-origin: center;
 }
 
 /* Rectangle 3 */
@@ -25,7 +46,7 @@ body {
 	background: #D9D9D9;
 }
 
-/* Background image (node 62:15) */
+/* Background image (node 11:142) */
 .background-image {
 	position: absolute;
 	inset: 0;
@@ -35,14 +56,105 @@ body {
 	background-size: cover;
 }
 
-/* Group (CULTURA DE BRUSQUE) */
+/* Botões */
+.botao-comecar,
+.botao-tutorial,
+.botao-fechar,
+.botao-configuracoes {
+	position: absolute;
+	width: 387px;
+	height: 191px;
+}
+
+.cloud-button {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 387px;
+	height: 191px;
+	opacity: 0.85;
+}
+
+/* Botão começar */
+.botao-comecar {
+	left: 15px;
+	top: 542px;
+}
+
+.text-comecar {
+	position: absolute;
+	left: 93px;
+	top: 69px;
+	width: 155px;
+	height: 44px;
+	font-family: "Fredoka One", system-ui, sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: rgba(11, 36, 20, 0.9);
+}
+
+/* Botão tutorial */
+.botao-tutorial {
+	left: 1521px;
+	top: 533px;
+}
+
+.text-tutorial {
+	position: absolute;
+	left: 124px;
+	top: 63px;
+	width: 176px;
+	height: 52px;
+	font-family: "Dela Gothic One", system-ui, sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: rgba(75, 54, 33, 0.9);
+}
+
+/* Botão ? (Fechar) */
+.botao-fechar {
+	left: 1521px;
+	top: 796px;
+}
+
+.text-fechar {
+	position: absolute;
+	left: 140px;
+	top: 59px;
+	width: 156px;
+	height: 52px;
+	font-family: "Dela Gothic One", system-ui, sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: rgba(26, 42, 58, 0.9);
+}
+
+/* Botão configurações */
+.botao-configuracoes {
+	left: 15px;
+	top: 800px;
+}
+
+.text-configuracoes {
+	position: absolute;
+	left: 12px;
+	top: 62px;
+	width: 316px;
+	height: 52px;
+	font-family: "Dela Gothic One", system-ui, sans-serif;
+	font-size: 36px;
+	font-weight: 400;
+	color: #2D2D2D;
+}
+
+/* Group (título) */
 .group {
 	position: absolute;
+	left: 551px;
 	top: 73px;
-	left: 50%;
 	width: 817.26px;
 	height: 180.02px;
-	transform: translateX(-50%);
+	pointer-events: none;
 }
 
 .group .g-letter {
@@ -59,7 +171,7 @@ body {
 	user-select: none;
 }
 
-/* Posições e dimensões das letras (conforme Figma) */
+/* Posições das letras (conforme Figma) */
 .group .g-letter:nth-child(1) { left: 37.74px; top: 138.15px; width: 75.48px; height: 90.69px; transform: translate(-50%, -50%) rotate(-29.00deg); }
 .group .g-letter:nth-child(2) { left: 82.8px; top: 113.22px; width: 71.8px; height: 87.79px; transform: translate(-50%, -50%) rotate(-27.00deg); }
 .group .g-letter:nth-child(3) { left: 126.24px; top: 92.98px; width: 63.33px; height: 87.69px; transform: translate(-50%, -50%) rotate(-23.00deg); }
@@ -78,161 +190,4 @@ body {
 .group .g-letter:nth-child(16) { left: 690.94px; top: 92.97px; width: 70.69px; height: 65.82px; transform: translate(-50%, -50%) rotate(23.10deg); }
 .group .g-letter:nth-child(17) { left: 738px; top: 115.08px; width: 72.04px; height: 62.83px; transform: translate(-50%, -50%) rotate(27.10deg); }
 .group .g-letter:nth-child(18) { left: 781.17px; top: 139.2px; width: 72.16px; height: 65.63px; transform: translate(-50%, -50%) rotate(29.20deg); }
-
-/* Rectangle 8 */
-.rectangle-8 {
-	position: absolute;
-	left: 709px;
-	top: 795px;
-	width: 1px;
-	height: 2px;
-	background: #D9D9D9;
-}
-
-/* Rectangle 7 (card do formulário) */
-.rectangle-7 {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 395px;
-	height: 570px;
-	transform: translate(-50%, -50%);
-	border-radius: 40px;
-	border: 1px solid #000000;
-	background: rgba(52, 110, 49, 0.7);
-	box-sizing: border-box;
-}
-
-/* Rectangle 9/10/11 (campos) */
-.rectangle-9,
-.rectangle-10,
-.rectangle-11 {
-	position: absolute;
-	left: 44px;
-	width: 306px;
-	background: #004D23;
-	border-radius: 40px;
-	border: none;
-	outline: none;
-	box-sizing: border-box;
-	padding: 0 18px;
-	font-family: "Do Hyeon", system-ui, sans-serif;
-	font-size: 18px;
-	font-weight: 400;
-	color: #FFFFFF;
-}
-
-/* Chrome/Edge autofill (evita fundo claro + texto preto ao escolher sugestão) */
-.rectangle-7 input {
-	caret-color: #FFFFFF;
-}
-
-.rectangle-7 input:-webkit-autofill,
-.rectangle-7 input:-webkit-autofill:hover,
-.rectangle-7 input:-webkit-autofill:focus,
-.rectangle-7 input:-webkit-autofill:active {
-	-webkit-text-fill-color: #FFFFFF;
-	-webkit-box-shadow: 0 0 0 1000px #004D23 inset;
-	box-shadow: 0 0 0 1000px #004D23 inset;
-	border-radius: 40px;
-	transition: background-color 9999s ease-in-out 0s;
-}
-
-.rectangle-7 input:autofill {
-	box-shadow: 0 0 0 1000px #004D23 inset;
-	caret-color: #FFFFFF;
-}
-
-/* NOME: (Rectangle 9 + label) */
-.rectangle-9,
-.field-nome {
-	top: 113px;
-	height: 56px;
-	line-height: 56px;
-	padding-left: 69px;
-}
-
-/* ESCOLA: (Rectangle 10 + label) */
-.rectangle-10,
-.field-escola {
-	top: 243px;
-	height: 53px;
-	line-height: 53px;
-	padding-left: 88px;
-}
-
-/* IDADE: (Rectangle 11 + label) */
-.rectangle-11,
-.field-idade {
-	top: 369px;
-	height: 53px;
-	line-height: 53px;
-	padding-left: 72px;
-}
-
-/* NOME:/ESCOLA:/IDADE: (labels) */
-.text-nome,
-.text-escola,
-.text-idade {
-	position: absolute;
-	left: 44px;
-	width: 306px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding-left: 18px;
-	font-family: "Do Hyeon", system-ui, sans-serif;
-	font-size: 18px;
-	font-weight: 400;
-	color: #FFFFFF;
-	line-height: 1;
-	pointer-events: none;
-}
-
-/* NOME: */
-.text-nome,
-.label-nome {
-	top: 113px;
-	height: 56px;
-}
-
-/* ESCOLA: */
-.text-escola,
-.label-escola {
-	top: 243px;
-	height: 53px;
-}
-
-/* IDADE: */
-.text-idade,
-.label-idade {
-	top: 369px;
-	height: 53px;
-}
-
-/* Rectangle 6 (botão) */
-.rectangle-6 {
-	position: absolute;
-	left: 117px;
-	top: 491px;
-	width: 169px;
-	height: 30px;
-	border-radius: 40px;
-	background: #004D23;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-}
-
-/* ENTRAR (texto do botão) */
-.text-entrar {
-	position: absolute;
-	left: 49px;
-	top: 5px;
-	font-family: "Do Hyeon", system-ui, sans-serif;
-	font-size: 18px;
-	font-weight: 400;
-	color: #FFFFFF;
-	line-height: 1;
-}
 

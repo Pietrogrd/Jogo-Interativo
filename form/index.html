@@ -54,5 +54,72 @@
             </button>
         </form>
     </div>
+
+    <script>
+        (() => {
+            const MIN_SCALE = 0.34;
+
+            function px(value) {
+                const n = Number.parseFloat(value);
+                return Number.isFinite(n) ? n : 0;
+            }
+
+            function updateTitleScale() {
+                const frame = document.querySelector('.frame-1');
+                const group = document.querySelector('.group');
+                if (!frame || !group) return;
+                const SAFE_SIDE_MARGIN = 24;
+
+                const cs = getComputedStyle(frame);
+                const paddingX = px(cs.paddingLeft) + px(cs.paddingRight);
+                const availableWidth = Math.max(0, frame.clientWidth - paddingX);
+                const usableWidth = Math.max(0, availableWidth - (SAFE_SIDE_MARGIN * 2));
+
+                // Mede o alcance real das letras (elas podem extrapolar a caixa da .group)
+                const previousInlineScale = group.style.getPropertyValue('--title-scale');
+                group.style.setProperty('--title-scale', '1');
+                // Força reflow antes da medição
+                group.getBoundingClientRect();
+
+                const frameRect = frame.getBoundingClientRect();
+                const frameCenterX = frameRect.left + (frameRect.width / 2);
+
+                const letters = group.querySelectorAll('.g-letter');
+                let minLeft = Infinity;
+                let maxRight = -Infinity;
+
+                letters.forEach((el) => {
+                    const r = el.getBoundingClientRect();
+                    if (r.width === 0 && r.height === 0) return;
+                    minLeft = Math.min(minLeft, r.left);
+                    maxRight = Math.max(maxRight, r.right);
+                });
+
+                let requiredWidth = 817.26;
+                if (Number.isFinite(minLeft) && Number.isFinite(maxRight)) {
+                    const halfWidth = Math.max(frameCenterX - minLeft, maxRight - frameCenterX);
+                    requiredWidth = Math.max(1, halfWidth * 2);
+                }
+
+                let scale = usableWidth / requiredWidth;
+                scale = Math.min(1, Math.max(MIN_SCALE, scale));
+                group.style.setProperty('--title-scale', scale.toFixed(4));
+
+                // Restaura caso algo dê errado
+                if (!Number.isFinite(scale)) {
+                    if (previousInlineScale) group.style.setProperty('--title-scale', previousInlineScale);
+                    else group.style.removeProperty('--title-scale');
+                }
+            }
+
+            updateTitleScale();
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(updateTitleScale).catch(() => {});
+            }
+            requestAnimationFrame(updateTitleScale);
+            window.addEventListener('resize', updateTitleScale, { passive: true });
+            window.addEventListener('orientationchange', updateTitleScale, { passive: true });
+        })();
+    </script>
 </body>
 </html>
