@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="96" viewBox="0 0 360 96" role="img" aria-label="Selecione uma alternativa">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe8c2"/>
+      <stop offset="1" stop-color="#ffd9e8"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="348" height="84" rx="18" fill="url(#bg)" stroke="#ff8800" stroke-width="3"/>
+  <circle cx="42" cy="48" r="22" fill="#ff6b9d"/>
+  <path d="M42 36v16" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="42" cy="60" r="3" fill="#ffffff"/>
+  <text x="82" y="55" font-family="Fredoka, sans-serif" font-size="18" fill="#6d4b27" font-weight="700">Selecione uma alternativa</text>
+</svg>

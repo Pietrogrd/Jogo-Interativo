@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz de Brusque</title>
+</head>
+<body class="quiz-page">
+    <img src="./assets/Brusque-animada.png" class="img-brusque" alt="Imagem de Brusque">
+
+    <div class="page-decor page-decor-left" aria-hidden="true">
+        <span class="spark spark-1"></span>
+        <span class="spark spark-2"></span>
+        <span class="spark spark-3"></span>
+    </div>
+
+    <div class="page-decor page-decor-right" aria-hidden="true">
+        <span class="cloud cloud-1"></span>
+        <span class="cloud cloud-2"></span>
+        <span class="cloud cloud-3"></span>
+    </div>
+
+    <div class="quiz-header">
+        <div class="quiz-header__left">
+            <span class="quiz-user-info">👤 <strong id="childNameDisplay"></strong></span>
+        </div>
+        <div class="quiz-header__right">
+            <button class="btn-logout" id="btnLogout" title="Sair da conta">Sair</button>
+        </div>
+    </div>
+
+    <main class="quiz-shell">
+        <!-- Tela de Quiz (Uma pergunta por vez) -->
+        <section class="quiz-container" id="quizContainer">
+            <div class="quiz-progress">
+                <span id="progressText">Pergunta 1 de 15</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="quiz-card-single">
+                <div class="quiz-card__left-single">
+                    <h2 id="questionNumber">Pergunta 1</h2>
+                    <div class="quiz-question-text" id="questionText"></div>
+
+                    <div class="quiz-options-single">
+                        <label class="option-label">
+                            <input type="radio" name="answer" value="A" class="option-input">
+                            <span class="option-text" id="optionA"></span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="answer" value="B" class="option-input">
+                            <span class="option-text" id="optionB"></span>
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="answer" value="C" class="option-input">
+                            <span class="option-text" id="optionC"></span>
+                        </label>
+                    </div>
+
+                    <div id="selectHint" class="select-hint" aria-hidden="true">
+                        <img src="./assets/select-hint.svg" alt="Selecione uma alternativa para continuar">
+                    </div>
+
+                    <div id="errorMessage" class="error-message"></div>
+
+                    <div class="quiz-navigation">
+                        <button class="btn-nav btn-prev" id="btnPrev" type="button">← Anterior</button>
+                        <button class="btn-nav btn-next" id="btnNext" type="button">Próxima →</button>
+                    </div>
+                </div>
+
+                <div class="quiz-card__right-single">
+                    <div class="quiz-image-frame-single">
+                        <img id="questionImage" src="" alt="Imagem da pergunta">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tela de Resultados -->
+        <section class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-summary">
+                <h1 id="resultTitle">Parabéns, <span id="childNameResult"></span>!</h1>
+                <div class="results-score">
+                    <div class="score-box correct">
+                        <span class="score-number" id="correctCount">0</span>
+                        <span class="score-label">Acertos</span>
+                    </div>
+                    <div class="score-box incorrect">
+                        <span class="score-number" id="incorrectCount">0</span>
+                        <span class="score-label">Erros</span>
+                    </div>
+                    <div class="score-box percentage">
+                        <span class="score-number" id="percentageScore">0%</span>
+                        <span class="score-label">Desempenho</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-details">
+                <h2>Sua resposta para cada pergunta:</h2>
+                <div id="resultsList" class="results-list"></div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn-action btn-retry" id="btnRetry" type="button">🔄 Recomeçar Quiz</button>
+                <button class="btn-action btn-home" id="btnHome" type="button">🚪 Sair</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="quiz.js"></script>
+
+</body>
+</html>

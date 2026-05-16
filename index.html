@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo-Interativo</title>
+</head>
+<body class="home-page">
+    <img src="./assets/Brusque-animada.png" class="img-brusque" alt="Imagem de Brusque">
+
+    <div class="page-decor page-decor-left" aria-hidden="true">
+        <span class="spark spark-1"></span>
+        <span class="spark spark-2"></span>
+        <span class="spark spark-3"></span>
+    </div>
+
+    <div class="page-decor page-decor-right" aria-hidden="true">
+        <span class="cloud cloud-1"></span>
+        <span class="cloud cloud-2"></span>
+        <span class="cloud cloud-3"></span>
+    </div>
+
+    <main class="home-shell">
+        <header class="titulo-faixa">
+            <h1 class="titulo-principal">Bem vindo ao Quiz de Brusque!</h1>
+        </header>
+
+        <div class="menu">
+            <h2>Digite seu Nome, Idade e a sua Escola!</h2>
+
+            <input type="text" id="inputNome" placeholder="NOME" required>
+            <input type="number" id="inputIdade" placeholder="IDADE" min="1" max="120" required>
+            <input type="text" id="inputEscola" placeholder="ESCOLA" required>
+
+            <button class="começar" type="button" id="btnComençar">Começar</button>
+            <span id="msgErro" class="msg-erro"></span>
+
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('btnComençar').addEventListener('click', function() {
+            const nome = document.getElementById('inputNome').value.trim();
+            const idade = document.getElementById('inputIdade').value.trim();
+            const escola = document.getElementById('inputEscola').value.trim();
+            const msgErro = document.getElementById('msgErro');
+
+            if (!nome || !idade || !escola) {
+                msgErro.textContent = '⚠️ Preencha todos os campos!';
+                msgErro.style.display = 'block';
+                return;
+            }
+
+            // Salvar dados no localStorage
+            localStorage.setItem('childName', nome);
+            localStorage.setItem('childAge', idade);
+            localStorage.setItem('childSchool', escola);
+
+            // Ir para quiz
+            window.location.href = 'quiz.html';
+        });
+
+        // Validação em tempo real
+        ['inputNome', 'inputIdade', 'inputEscola'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                if (this.value.trim()) {
+                    document.getElementById('msgErro').style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
